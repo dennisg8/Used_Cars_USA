@@ -1,0 +1,203 @@
+SELECT *
+  FROM car;
+
+SELECT *
+  FROM car
+ ORDER BY year DESC;
+
+SELECT *
+  FROM car
+ ORDER BY price DESC;
+ 
+-- Taking out unnecessary data from the table.
+DELETE FROM car
+      WHERE price = '0';
+
+DELETE FROM car
+      WHERE year < '2017';
+      
+DELETE FROM car
+      WHERE color = 'no_color';
+
+--Shows which car brand sold the most each year.
+SELECT brand,
+       COUNT(brand) AS total_brands
+  FROM car
+ GROUP BY brand
+ ORDER BY total_brands DESC;
+
+SELECT brand,
+       COUNT(brand) AS total_2017
+  FROM car
+ WHERE year = '2017'
+ GROUP BY brand
+ ORDER BY total_2017 DESC;
+
+SELECT brand,
+       COUNT(brand) AS total_2018
+  FROM car
+ WHERE year = '2018'
+ GROUP BY brand
+ ORDER BY total_2018 DESC;
+
+SELECT brand,
+       COUNT(brand) AS total_2019
+  FROM car
+ WHERE year = '2019'
+ GROUP BY brand
+ ORDER BY total_2019 DESC;
+
+SELECT brand,
+       COUNT(brand) AS total_2020
+  FROM car
+ WHERE year = '2020'
+ GROUP BY brand
+ ORDER BY total_2020 DESC;
+ 
+--Was there a specific color that consistently sold more?
+SELECT color,
+       COUNT(color) AS total_colors
+  FROM car
+ GROUP BY color
+ Order by total_colors desc;
+ 
+SELECT color,
+       COUNT(color) AS total_color17
+  FROM car
+  Where year = '2017'
+ GROUP BY color
+ Order by total_color17 desc;
+ 
+SELECT color,
+       COUNT(color) AS total_color18
+  FROM car
+  Where year = '2018'
+ GROUP BY color
+ Order by total_color18 desc;
+ 
+SELECT color,
+       COUNT(color) AS total_color19
+  FROM car
+  Where year = '2019'
+ GROUP BY color
+ Order by total_color19 desc;
+ 
+SELECT color,
+       COUNT(color) AS total_color20
+  FROM car
+  Where year = '2020'
+ GROUP BY color
+ Order by total_color20 desc;
+ 
+--Shows highest and lowest price paid for a used car for each year.
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2017'
+ ORDER BY price DESC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2017'
+ ORDER BY price ASC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2018'
+ ORDER BY price DESC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2018'
+ ORDER BY price ASC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2019'
+ ORDER BY price DESC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2019'
+ ORDER BY price ASC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2020'
+ ORDER BY price DESC;
+
+SELECT price,
+       brand,
+       model,
+       mileage,
+       year
+  FROM car
+ WHERE year = '2020'
+ ORDER BY price ASC;
+
+--Shows the state where most used car sales were made each year.
+SELECT state,
+       COUNT(state) AS total_state
+  FROM car
+ GROUP BY state
+ ORDER BY total_state DESC;
+
+SELECT year,
+       state,
+       COUNT(state) AS total_state17
+  FROM car
+ WHERE year = '2017'
+ GROUP BY state
+ ORDER BY total_state17 DESC;
+
+SELECT year,
+       state,
+       COUNT(state) AS total_state18
+  FROM car
+ WHERE year = '2018'
+ GROUP BY state
+ ORDER BY total_state18 DESC;
+
+SELECT year,
+       state,
+       COUNT(state) AS total_state19
+  FROM car
+ WHERE year = '2019'
+ GROUP BY state
+ ORDER BY total_state19 DESC;
+
+SELECT year,
+       state,
+       COUNT(state) AS total_state20
+  FROM car
+ WHERE year = '2020'
+ GROUP BY state
+ ORDER BY total_state20 DESC; 
+ 
